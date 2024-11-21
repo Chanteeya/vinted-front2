@@ -1,42 +1,111 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Styles globaux */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* S'assurer que tout prend 100% de la largeur */
+}
+
+main {
+  width: 100%; /* Pleine largeur pour la section principale */
+  padding: 20px; /* Optionnel : ajouter un espacement interne */
+  box-sizing: border-box; /* Inclure les paddings dans la largeur totale */
+}
+
+.img1 {
+  width: 1800px; /* Largeur de l'image */
+
+  object-fit: cover; /* Remplit la zone tout en respectant le ratio */
+}
+h2 {
   text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Grid Layout for Offers */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colonnes de largeur égale */
+  gap: 20px; /* Espacement entre les colonnes et les lignes */
+  margin: 0 auto; /* Centrer la grille horizontalement */
+  width: 100%; /* Prend toute la largeur */
+  max-width: 1200px; /* Optionnel : Limiter la largeur maximale sur les très grands écrans */
+  padding: 0 20px; /* Ajoute un peu de padding sur les bords pour un meilleur rendu */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.offer-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+article {
+  border: 1px solid #ddd;
+  border-radius: none;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 350px;
+  height: 350px;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.offer-owner {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.offer-owner img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.offer-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.offer-price {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+@media (max-width: 1200px) {
+  .offers-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur écrans moyens */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 900px) {
+  .offers-grid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 colonnes sur écrans plus petits */
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 600px) {
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobiles */
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media (max-width: 400px) {
+  .offers-grid {
+    grid-template-columns: 1fr; /* 1 colonne sur petits écrans */
+  }
 }
