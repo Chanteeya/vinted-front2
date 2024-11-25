@@ -70,10 +70,17 @@ header .container {
 }
 
 .search-input {
-  width: 500px;
-  padding: 5px 5px;
+  width: 590px;
+  padding-left: 40px;
+  background-color: #f5f6f7;
   border-radius: 5px;
+  height: 37px;
+  border: none;
+  outline: none;
+  font-family: Maison Neue;
+  font-size: 16px;
 }
+
 main .container {
   /*background-color: aqua;*/
 }
@@ -155,7 +162,7 @@ main .container {
   justify-content: center; /* Centre verticalement le contenu */
   align-items: left; /* Centre horizontalement le contenu */
   margin: 0; /* Supprime les marges éventuelles */
-  padding: 0px 350px;
+  padding: 0px 120px;
 }
 
 .button-hero {
@@ -172,7 +179,8 @@ main .container {
 
 .sub-hero {
   width: 400px;
-  height: 350px;
+  height: 250px;
+  border-radius: 5px;
   background-color: white;
   justify-content: left;
   justify-items: left;
@@ -180,7 +188,9 @@ main .container {
 }
 
 .hero h1 {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 30px;
   text-align: left;
 }
+
+/* Page Offer*/
