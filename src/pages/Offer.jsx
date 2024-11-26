@@ -31,28 +31,35 @@ const Offer = () => {
         <p>Loading...</p>
       ) : (
         <>
-          <h2>Offer</h2>
-          <p>{data.product_name}</p>
-          {/* <p>MARQUE : {data.product_details[0].MARQUE}</p>
+          <div className="container">
+            <div className="column1">
+              <p>Pour afficher l'image</p>
+            </div>
+            <div className="column2">
+              <h2>Offer</h2>
+              <p>{data.product_name}</p>
+              {/* <p>MARQUE : {data.product_details[0].MARQUE}</p>
           <p>TAILLE : {data.product_details[1].TAILLE}</p>
           <p>ÉTAT : {data.product_details[2].ÉTAT}</p>
           <p>COULEUR : {data.product_details[3].COULEUR}</p> */}
-          {/* <p>EMPLACEMENT : {data.product_details[4].EMPLACEMENT}</p> */}
-          {/* <p>
+              {/* <p>EMPLACEMENT : {data.product_details[4].EMPLACEMENT}</p> */}
+              {/* <p>
             MODES DE PAIEMENT : {data.product_details[5]["MODES DE PAIEMENT"]}
           </p> */}
-          {data.product_details.map((detail, index) => {
-            // console.log("l'objet du tour de boucle ", detail);
-            const keysInObj = Object.keys(detail);
-            // console.log("les clefs dans cet objet ", keysInObj);
-            const keyInObj = keysInObj[0];
-            // console.log("la clef sortie du tableau ", keyInObj);
-            return (
-              <p key={index}>
-                {keyInObj} : {detail[keyInObj]}
-              </p>
-            );
-          })}
+              {data.product_details.map((detail, index) => {
+                // console.log("l'objet du tour de boucle ", detail);
+                const keysInObj = Object.keys(detail);
+                // console.log("les clefs dans cet objet ", keysInObj);
+                const keyInObj = keysInObj[0];
+                // console.log("la clef sortie du tableau ", keyInObj);
+                return (
+                  <p key={index}>
+                    {keyInObj} : {detail[keyInObj]}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
         </>
       )}
     </main>
